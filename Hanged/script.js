@@ -27,16 +27,16 @@ function done() {
                 }
                 else {
 
-                    //qui non si deve aggiungere un trattino, ma il carattere preciso della stringa originale
+                    //cambiare trattini se si trova il modo di non farli attaccare tra loro _
+                    //forse dovrei cambiare il font della pagina, o magari c'È un'opzione css
                     tempstring += document.getElementById("id_parola").value[i]
-                    //funziona, solo che fa un po' di casino con i trattini, credo si dato dal fatto che ci sono gli spazi
-                    //ho paura di dover ricorrere ai trattini in mezzo invece che a quelli in basso
+                    
                 }
                 
             } else {
                 canContinue = false
                 tempstring = document.getElementById("id_parola").value
-                //c'è un problemino se la lettera non c'è
+                
             }
         }
         document.getElementById("id_parola").value = tempstring
@@ -50,6 +50,7 @@ function done() {
 //questa è la prima cosa che parte quando carica la pagina
 window.onload = function () {
     generazione()
+    scompari()
 }
 
 //questa funzione sceglie dal primo la parola da usare 
@@ -60,4 +61,8 @@ function generazione() {
         trattini += "-"
     }
     document.getElementById("id_parola").value = trattini
+}
+function scompari(){
+    let immagini = []
+    immagini = document.getElementsByTagName("img").style
 }

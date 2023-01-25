@@ -36,6 +36,9 @@ body{
     height: 50vh;
     position: absolute;
     left: 30px;
+    /*possibile cambio con nuova immagine*/
+    width: 500px;
+    object-fit: cover;
 }
 #dietro{
     position: relative;
@@ -44,3 +47,9 @@ body{
 /*sinistra{
     padding: 20vh 100px;
 }*/
+#dietro{
+    /*cambio con nuova immagine*/
+    width: 500px;
+    height: 50vh;
+    object-fit: cover;
+}
