@@ -1,0 +1,5 @@
+creare i diversi pezzi della persona
+testa, torso, braccio sinistro, braccio destro, gamba sinistra, gamba destra
+(magari aggiungerne altri)
+farli con lo sfondo vuoto
+usare le posizioni per aggiungerli piano piano
