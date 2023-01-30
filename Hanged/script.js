@@ -1,10 +1,11 @@
 //"onomatopeico","aberrazione","toponimo","aracnofobia","entropia","iniquo"
 const arrayStringhe = ["saba"]
 numero = Math.floor(Math.random() * arrayStringhe.length)
+var parola = arrayStringhe[numero]
 
 //quando premi il bottone "fatto"
 function done() {
-    let parola = arrayStringhe[numero]
+    
 
 
     let lettera = document.getElementById("id_lettera").value
@@ -43,8 +44,11 @@ function done() {
 
         if (!isWordHere) {
             //fare tuttecose con l'immagine
+            errore()
         }
     }
+    pulisci()
+    stato()
 }
 
 //questa è la prima cosa che parte quando carica la pagina
@@ -63,6 +67,32 @@ function generazione() {
     document.getElementById("id_parola").value = trattini
 }
 function scompari(){
-    let immagini = []
-    immagini = document.getElementsByTagName("img").style
+
+    //questa funzione setta tutte le immagini a invisibili, tranne la base
+    const immagini = document.getElementsByTagName("img")
+    for(i = 0; i<immagini.length; i++){
+        immagini[i].style.visibility = "hidden"
+    }
+    immagini[0].style.visibility = "visible"
+}
+var position = 1
+function errore(){
+
+    //far comparire pian piano i pezzi
+    const immagini = document.getElementsByTagName("img")
+    immagini[position].style.visibility = "visible"
+    if(position <= 6){
+    position++
+    }
+}
+function pulisci(){
+    document.getElementById("id_lettera").value = ""
+}
+function stato(){
+    if(parola == document.getElementById("id_parola").value){
+        alert("Hai vinto!")
+    }
+    if(document.getElementsByTagName("img")[6].style.visibility == "visible"){
+        alert("Hai perso!")
+    }
 }
