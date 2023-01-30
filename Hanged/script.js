@@ -1,5 +1,4 @@
-//"onomatopeico","aberrazione","toponimo","aracnofobia","entropia","iniquo"
-const arrayStringhe = ["saba"]
+const arrayStringhe = ["onomatopeico","aberrazione","toponimo","aracnofobia","entropia","iniquo"]
 numero = Math.floor(Math.random() * arrayStringhe.length)
 var parola = arrayStringhe[numero]
 

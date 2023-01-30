@@ -1,33 +1,30 @@
 body{
-    /*da cambiare in seguito*/
-    background-color: green;
+    background-color: rgb(245, 246, 217);
 }
 .pagina {
+    /*Divisione della pagina in due elementi belli e ordinati*/
   display: grid;
   grid-template-columns: auto auto;
-  /*da togliere in seguito*/
-  background-color: #2196F3;
   padding: 10px;
   width: fit-content;
-  height: 70vh;
   margin: auto;
+
+  /*da questo punto tutti gli elementi dovrebbero riferirsi con le loro posizioni a questo*/
   position:relative;
 }
 .oggetto {
-    /*da cambiare in seguito*/
-    background-color: yellow;
-    /*da togliere in seguito*/
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    /*pezzo generale della griglia*/
+    background-color: rgb(196, 239, 150);
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    height: 47vh;
 }
 #id_lettera{
     width: 2ch;
 }
 #destra{
-    /*centrare verticalmente alla fine*/
-    padding: 20vh 10px;
+    padding: 17vh 0px 0px ;
 }
 #id_parola{
     text-align: center;
@@ -36,19 +33,17 @@ body{
     height: 50vh;
     position: absolute;
     left: 30px;
-    /*possibile cambio con nuova immagine*/
-    width: 500px;
     object-fit: cover;
 }
 #dietro{
     position: relative;
     height: 50vh;
 }
-/*sinistra{
-    padding: 20vh 100px;
-}*/
+.sinistra{
+    width: 350px;
+}
 #dietro{
-    /*cambio con nuova immagine*/
+    /*oggetto sul quale si basano le immagini*/
     width: 500px;
     height: 50vh;
     object-fit: cover;
