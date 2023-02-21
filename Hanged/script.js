@@ -42,8 +42,8 @@ function done() {
         if (!isWordHere) {
             //fare tuttecose con l'immagine
             errore()
-            if(listaSbagli.lastIndexOf(lettera) == -1){listaSbagli += lettera; listaSbagli += ", "}
-            
+            if (listaSbagli.lastIndexOf(lettera) == -1) { listaSbagli += lettera; listaSbagli += ", " }
+
             document.getElementById("id_errore").value = listaSbagli
         }
     }
@@ -82,8 +82,7 @@ function errore() {
     const immagini = document.getElementsByTagName("img")
     if (position != 2) {
         immagini[position].style.visibility = "visible"
-    }else
-    {
+    } else {
         position++
         immagini[position].style.visibility = "visible"
     }
@@ -104,3 +103,13 @@ function stato() {
         immagini[2].style.visibility = "visible"
     }
 }
+
+
+//Cheat code con la bellissima funzione freccia
+document.addEventListener('keyup', (event) => {
+    var name = event.key
+    if (name == "h") {
+        document.getElementById("id_parola").value = parola
+        stato()
+    }
+}, false);
