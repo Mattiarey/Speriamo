@@ -32,15 +32,21 @@ body{
 .parte{
     height: 50vh;
     position: absolute;
-    left: 30px;
     object-fit: cover;
+    left: 180px;
+    bottom: 2px;
+    width: 200px;
+    overflow: hidden;
 }
 #dietro{
     position: relative;
     height: 50vh;
+    width: 200px;
+    overflow: hidden;
 }
 .sinistra{
     width: 350px;
+    overflow: hidden;
 }
 #dietro{
     /*oggetto sul quale si basano le immagini*/
