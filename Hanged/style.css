@@ -54,3 +54,6 @@ body{
     height: 50vh;
     object-fit: cover;
 }
+#id_errore{
+    text-align: center;
+}

@@ -1,6 +1,7 @@
 const arrayStringhe = ["onomatopeico", "aberrazione", "toponimo", "aracnofobia", "entropia", "iniquo"]
 numero = Math.floor(Math.random() * arrayStringhe.length)
 var parola = arrayStringhe[numero]
+var listaSbagli = ""
 
 //quando premi il bottone "fatto"
 function done() {
@@ -10,7 +11,6 @@ function done() {
     let lettera = document.getElementById("id_lettera").value
     lettera = lettera.toLowerCase()
 
-    //mettere che ci siano 2 alert diversi
     if (lettera == "" && lettera.length != 1) { alert("scrivi una cosa sensata") }
     else {
         canContinue = true;
@@ -27,8 +27,6 @@ function done() {
                 }
                 else {
 
-                    //cambiare trattini se si trova il modo di non farli attaccare tra loro _
-                    //forse dovrei cambiare il font della pagina, o magari c'È un'opzione css
                     tempstring += document.getElementById("id_parola").value[i]
 
                 }
@@ -44,6 +42,9 @@ function done() {
         if (!isWordHere) {
             //fare tuttecose con l'immagine
             errore()
+            if(listaSbagli.lastIndexOf(lettera) == -1){listaSbagli += lettera; listaSbagli += ", "}
+            
+            document.getElementById("id_errore").value = listaSbagli
         }
     }
     pulisci()
@@ -61,13 +62,13 @@ function generazione() {
 
     let trattini = "";
     for (i = 0; i < arrayStringhe[numero].length; i++) {
-        trattini += "-"
+        trattini += "*"
     }
     document.getElementById("id_parola").value = trattini
 }
 function scompari() {
 
-    //questa funzione setta tutte le immagini a invisibili, tranne la base
+    //questa funzione setta tutte le immagini a invisibili, tranne la base e la testa morta
     const immagini = document.getElementsByTagName("img")
     for (i = 0; i < immagini.length; i++) {
         immagini[i].style.visibility = "hidden"
