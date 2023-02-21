@@ -1,10 +1,10 @@
-const arrayStringhe = ["onomatopeico","aberrazione","toponimo","aracnofobia","entropia","iniquo"]
+const arrayStringhe = ["onomatopeico", "aberrazione", "toponimo", "aracnofobia", "entropia", "iniquo"]
 numero = Math.floor(Math.random() * arrayStringhe.length)
 var parola = arrayStringhe[numero]
 
 //quando premi il bottone "fatto"
 function done() {
-    
+
 
 
     let lettera = document.getElementById("id_lettera").value
@@ -30,13 +30,13 @@ function done() {
                     //cambiare trattini se si trova il modo di non farli attaccare tra loro _
                     //forse dovrei cambiare il font della pagina, o magari c'È un'opzione css
                     tempstring += document.getElementById("id_parola").value[i]
-                    
+
                 }
-                
+
             } else {
                 canContinue = false
                 tempstring = document.getElementById("id_parola").value
-                
+
             }
         }
         document.getElementById("id_parola").value = tempstring
@@ -65,33 +65,41 @@ function generazione() {
     }
     document.getElementById("id_parola").value = trattini
 }
-function scompari(){
+function scompari() {
 
     //questa funzione setta tutte le immagini a invisibili, tranne la base
     const immagini = document.getElementsByTagName("img")
-    for(i = 0; i<immagini.length; i++){
+    for (i = 0; i < immagini.length; i++) {
         immagini[i].style.visibility = "hidden"
     }
     immagini[0].style.visibility = "visible"
 }
 var position = 1
-function errore(){
+function errore() {
 
     //far comparire pian piano i pezzi
     const immagini = document.getElementsByTagName("img")
-    immagini[position].style.visibility = "visible"
-    if(position <= 6){
-    position++
+    if (position != 2) {
+        immagini[position].style.visibility = "visible"
+    }else
+    {
+        position++
+        immagini[position].style.visibility = "visible"
+    }
+    if (position <= 6) {
+        position++
     }
 }
-function pulisci(){
+function pulisci() {
     document.getElementById("id_lettera").value = ""
 }
-function stato(){
-    if(parola == document.getElementById("id_parola").value){
+function stato() {
+    if (parola == document.getElementById("id_parola").value) {
         alert("Hai vinto!")
     }
-    if(document.getElementsByTagName("img")[6].style.visibility == "visible"){
+    if (document.getElementsByTagName("img")[7].style.visibility == "visible") {
         alert("Hai perso!")
+        const immagini = document.getElementsByTagName("img")
+        immagini[2].style.visibility = "visible"
     }
 }
